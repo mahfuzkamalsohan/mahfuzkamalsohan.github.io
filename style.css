@@ -1,0 +1,1045 @@
+/* ==========================================================================
+   PORTFOLIO DESIGN SYSTEM - EARTHY RETRO PAPERLIKE THEME
+   Headings: 'Londrina Solid', cursive, sans-serif
+   Body: 'Neo Sans', 'Inter', sans-serif
+   ========================================================================== */
+
+:root {
+    --font-heading: 'Londrina Solid', cursive, sans-serif;
+    --font-body: 'Neo Sans', 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* Primary Earthy Retro Palette */
+    --bg-paper: #F9F8F3;
+    --grid-green: #D1E0D7;
+    --color-slate: #334155;
+    --color-beige: #EFECE6;
+    --color-teal: #004D40;
+
+    /* Secondary Monochromatic Green Highlights */
+    --color-lime: #A3E635;
+    --color-mint: #6EE7B7;
+    --color-sage: #87A96B;
+    --color-dark-olive: #3B4E32;
+
+    /* Secondary Monochromatic Orange Highlights */
+    --color-orange: #F97316;
+    --color-orange-dark: #EA580C;
+    --color-orange-light: #FFEDD5;
+
+    /* Paper Shadows & Borders */
+    --shadow-retro: 4px 4px 0px var(--color-teal);
+    --shadow-retro-lg: 8px 8px 0px var(--color-teal);
+    --border-paper: 2px solid var(--color-teal);
+}
+
+/* Base Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: var(--bg-paper);
+    color: var(--color-slate);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   FINE GREEN GRID BACKGROUND (PAPERLIKE)
+   ========================================================================== */
+
+.bg-grid-overlay {
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(var(--grid-green) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-green) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.75;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR (RETRO PAPER STYLE)
+   ========================================================================== */
+
+.navbar-container {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding: 0 20px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    background: var(--bg-paper);
+    border: var(--border-paper);
+    border-radius: 16px;
+    padding: 8px 24px;
+    box-shadow: var(--shadow-retro);
+}
+
+.nav-brand {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    color: var(--color-teal);
+    user-select: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+.nav-btn {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: var(--color-slate);
+    background: var(--color-beige);
+    border: 2px solid transparent;
+    padding: 6px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.nav-btn:hover {
+    color: var(--color-teal);
+    border-color: var(--color-teal);
+    background: var(--color-mint);
+    transform: translateY(-2px);
+}
+
+.nav-btn.active {
+    color: var(--bg-paper);
+    background: var(--color-teal);
+    border-color: var(--color-teal);
+    box-shadow: 2px 2px 0px var(--color-orange);
+}
+
+/* ==========================================================================
+   SCROLLABLE MAIN STAGE & PANELS
+   ========================================================================== */
+
+.main-stage {
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+
+.panel {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 110px 20px 80px;
+    scroll-margin-top: 40px;
+}
+
+/* ==========================================================================
+   CENTER STAGE ID CARD (HOME PANEL)
+   ========================================================================== */
+
+.hero-center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* 3D Perspective Wrapper */
+.id-card-wrapper {
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ID Card Component - Flat Paper Style */
+.id-card {
+    position: relative;
+    border-radius: 16px;
+    cursor: grab;
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease-out, box-shadow 0.2s ease;
+    border: 3px solid var(--color-teal);
+    background: var(--color-beige);
+    box-shadow: var(--shadow-retro-lg);
+    will-change: transform;
+}
+
+.id-card:active {
+    cursor: grabbing;
+}
+
+.id-card-img {
+    display: block;
+    max-width: 580px;
+    width: 90vw;
+    height: auto;
+    border-radius: 13px;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Paper Sheen Overlay */
+.card-glare {
+    position: absolute;
+    inset: 0;
+    border-radius: 13px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 5;
+}
+
+/* Social & Contact Links (Paper Retro Style) */
+.social-links-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-teal);
+    letter-spacing: 0.5px;
+    background: var(--color-beige);
+    border: var(--border-paper);
+    padding: 8px 22px;
+    border-radius: 999px;
+    box-shadow: var(--shadow-retro);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+    color: var(--bg-paper);
+    background: var(--color-teal);
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0px var(--color-orange);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Card Instruction Badge */
+.card-instruction {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--color-teal);
+    letter-spacing: 0.5px;
+    background: var(--color-beige);
+    border: var(--border-paper);
+    padding: 8px 22px;
+    border-radius: 999px;
+    box-shadow: var(--shadow-retro);
+}
+
+.pulse-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-orange);
+    box-shadow: 0 0 0 2px var(--color-teal);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        background-color: var(--color-orange);
+    }
+
+    50% {
+        transform: scale(1.2);
+        background-color: var(--color-lime);
+    }
+
+    100% {
+        transform: scale(0.95);
+        background-color: var(--color-orange);
+    }
+}
+
+/* ==========================================================================
+   OTHER SECTIONS & PANEL STYLES
+   ========================================================================== */
+
+.panel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.panel-title {
+    font-family: var(--font-heading);
+    font-size: 4.2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--color-teal);
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px var(--color-grid-green);
+}
+
+.panel-card {
+    width: 100%;
+    background: var(--bg-paper);
+    border: 3px solid var(--color-teal);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow-retro-lg);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.panel-placeholder-text {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--color-slate);
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+/* Secondary Monochromatic Highlight Badges */
+.badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.badge {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    padding: 5px 14px;
+    border-radius: 8px;
+    border: 2px solid var(--color-teal);
+    color: var(--color-teal);
+    font-weight: 400;
+    box-shadow: 2px 2px 0px var(--color-teal);
+}
+
+.badge-lime {
+    background-color: var(--color-lime);
+}
+
+.badge-mint {
+    background-color: var(--color-mint);
+}
+
+.badge-sage {
+    background-color: var(--color-sage);
+    color: #ffffff;
+}
+
+.badge-olive {
+    background-color: var(--color-dark-olive);
+    color: #ffffff;
+}
+
+.badge-orange {
+    background-color: var(--color-orange);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   EXPERIENCE SECTION - PROJECT ALTAIR MARS ROVER CARD
+   ========================================================================== */
+
+.experience-card {
+    position: relative;
+    width: 100%;
+    max-width: 880px;
+    background: var(--bg-paper);
+    border: 3px solid var(--color-teal);
+    border-radius: 24px;
+    padding: 36px 36px 32px 250px;
+    /* Padding left leaves room for left-aligned rover.png */
+    box-shadow: var(--shadow-retro-lg);
+    margin-top: 60px;
+    /* Margin top accommodates the 1/3rd sticking out rover.png */
+    overflow: visible;
+}
+
+/* Altair Badge: Top Right Corner of First Experience Card */
+.altair-badge-wrapper {
+    position: absolute;
+    right: -30px;
+    top: -50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--bg-paper);
+    border: 3px solid var(--color-teal);
+    box-shadow: var(--shadow-retro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    z-index: 20;
+    transition: transform 0.25s ease;
+}
+
+.altair-badge-wrapper:hover {
+    transform: scale(1.05) rotate(8deg);
+}
+
+.altair-badge-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Rover Image: 1/3rd sticks out at top left */
+.rover-img-wrapper {
+    position: absolute;
+    left: 20px;
+    top: 0;
+
+    transform: translateY(-33.33%) translateX(-33.33%) rotate(-15deg);
+    /* Shifts top 1/3rd above the card border */
+    width: 400px;
+    z-index: 15;
+
+    pointer-events: none;
+}
+
+.rover-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(4px 6px 0px rgba(0, 77, 64, 0.25));
+}
+
+/* Astronaut Image: Positioned below rover without rotation */
+.astronaut-img-wrapper {
+    position: absolute;
+    left: 50px;
+    top: 210px;
+    width: 150px;
+    z-index: 16;
+    pointer-events: none;
+
+}
+
+.astronaut-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    filter: drop-shadow(4px 6px 0px rgba(0, 77, 64, 0.25));
+
+}
+
+/* Research Image: Positioned on left side like astronaut.png, unrotated */
+.research-img-wrapper {
+    position: absolute;
+    left: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 160px;
+    z-index: 16;
+    pointer-events: none;
+}
+
+.research-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    filter: drop-shadow(4px 6px 0px rgba(0, 77, 64, 0.25));
+}
+
+/* Art Image: Positioned on left side like research.png, unrotated */
+.art-img-wrapper {
+    position: absolute;
+    left: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 160px;
+    z-index: 16;
+    pointer-events: none;
+}
+
+.art-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    filter: drop-shadow(4px 6px 0px rgba(0, 77, 64, 0.25));
+}
+
+.exp-sub-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.exp-sub-block .exp-card-header+.exp-card-header {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--grid-green);
+}
+
+.exp-sub-block+.exp-sub-block {
+    margin-top: 10px;
+    padding-top: 14px;
+    border-top: 2px dashed var(--grid-green);
+}
+
+.exp-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+}
+
+.exp-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+    border-bottom: 2px dashed var(--grid-green);
+    padding-bottom: 14px;
+}
+
+.exp-role-title {
+    font-family: var(--font-heading);
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: var(--color-teal);
+    line-height: 1.15;
+}
+
+.exp-team-subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--color-orange-dark);
+    margin-top: 4px;
+}
+
+.exp-date-badge {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    background: var(--color-beige);
+    border: 2px solid var(--color-teal);
+    color: var(--color-teal);
+    padding: 4px 14px;
+    border-radius: 999px;
+    box-shadow: 2px 2px 0px var(--color-teal);
+    white-space: nowrap;
+}
+
+.exp-card-body {
+    padding: 4px 0;
+}
+
+.exp-bullet-point {
+    font-family: var(--font-body);
+    /* Neo Sans / Inter */
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--color-slate);
+}
+
+.exp-tech-tags {
+    justify-content: flex-start;
+    margin-top: 4px;
+}
+
+/* ==========================================================================
+   PROJECTS SECTION - POLAROID CARDS GRID
+   ========================================================================== */
+
+.polaroid-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 10px;
+}
+
+.polaroid-card {
+    position: relative;
+    background: #ffffff;
+    border: 3px solid var(--color-teal);
+    border-radius: 12px;
+    padding: 14px 14px 20px;
+    box-shadow: var(--shadow-retro-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    will-change: transform;
+    height: 100%;
+}
+
+.polaroid-card a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+.polaroid-tilt-left {
+    transform: rotate(-2deg);
+}
+
+.polaroid-tilt-right {
+    transform: rotate(2.5deg);
+}
+
+.polaroid-card:hover {
+    transform: rotate(0deg) scale(1.03);
+    box-shadow: 10px 10px 0px var(--color-teal);
+    z-index: 20;
+}
+
+.polaroid-img-frame {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    /* Guaranteed 16:9 Widescreen Box Ratio */
+    background: #111827;
+    border: 2px solid var(--color-teal);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.polaroid-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.polaroid-caption {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+    text-align: left;
+    padding: 0 2px;
+}
+
+.polaroid-title {
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: var(--color-teal);
+    line-height: 1.1;
+}
+
+.polaroid-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.polaroid-title a:hover {
+    color: var(--color-orange-dark);
+}
+
+.polaroid-desc {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-slate);
+}
+
+.polaroid-tags {
+    justify-content: flex-start;
+    margin-top: auto;
+    padding-top: 4px;
+}
+
+/* ==========================================================================
+   MUSIC SECTION - PLAYER CARD & WAVEFORM
+   ========================================================================== */
+
+.music-card {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    background: var(--bg-paper);
+    border: 3px solid var(--color-teal);
+    border-radius: 24px;
+    padding: 32px 180px 28px 32px;
+    box-shadow: var(--shadow-retro-lg);
+    margin: 60px auto 0 auto;
+    overflow: visible;
+}
+
+/* Guitar Image: 1/3rd sticks out at top right */
+.guitar-img-wrapper {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    transform: translateY(-25%) translateX(50%) rotate(6deg);
+    width: 710px;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.guitar-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(4px 6px 0px rgba(0, 77, 64, 0.25));
+}
+
+.music-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+}
+
+.audio-player-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.audio-play-btn {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--color-teal);
+    border: 2px solid var(--color-teal);
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-retro);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.audio-play-btn:hover {
+    background: var(--color-orange);
+    transform: scale(1.06);
+}
+
+.play-svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+.play-svg.hidden {
+    display: none;
+}
+
+.audio-track-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.audio-title {
+    font-family: var(--font-heading);
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: var(--color-teal);
+    line-height: 1.1;
+}
+
+.audio-status {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--color-orange-dark);
+}
+
+/* Soundcloud / Spotify Style Waveform Container */
+.waveform-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 64px;
+    background: var(--color-beige);
+    border: 2px solid var(--color-teal);
+    border-radius: 14px;
+    padding: 10px 14px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin: 4px 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.wave-bar {
+    flex: 1;
+    height: var(--h, 40%);
+    background: var(--color-teal);
+    border-radius: 3px;
+    transition: height 0.15s ease, background-color 0.2s ease, opacity 0.2s ease;
+    opacity: 0.55;
+}
+
+.wave-bar.played {
+    background: var(--color-orange);
+    opacity: 1;
+}
+
+.music-desc-text {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--color-slate);
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT ADJUSTMENTS (FULL MOBILE & TABLET OPTIMIZATION)
+   ========================================================================== */
+
+@media (max-width: 820px) {
+    .navbar-container {
+        top: 14px;
+        padding: 0 12px;
+    }
+
+    .navbar {
+        gap: 8px;
+        padding: 6px 14px;
+        width: 100%;
+        max-width: 460px;
+        justify-content: space-around;
+    }
+
+    .nav-btn {
+        font-size: 1.15rem;
+        padding: 5px 12px;
+    }
+
+    .panel {
+        padding: 95px 16px 50px;
+        min-height: auto;
+    }
+
+    .panel-title {
+        font-size: 3rem;
+    }
+
+    .hero-center-container {
+        gap: 18px;
+    }
+
+    .id-card-img {
+        max-width: 320px;
+        width: 86vw;
+    }
+
+    .social-btn {
+        font-size: 1.1rem;
+        padding: 6px 16px;
+        max-width: 100%;
+        word-break: break-all;
+    }
+
+    /* Experience Section Cards on Mobile */
+    .experience-card {
+        padding: 110px 20px 24px 20px;
+        margin-top: 60px;
+        width: 100%;
+    }
+
+    .rover-img-wrapper {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -33.33%) rotate(-10deg);
+        width: 220px;
+    }
+
+    .altair-badge-wrapper {
+        width: 110px;
+        height: 110px;
+        right: -10px;
+        top: -30px;
+    }
+
+    .astronaut-img-wrapper {
+        display: none;
+    }
+
+    .research-img-wrapper,
+    .art-img-wrapper {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        margin: 0 auto 16px auto;
+        width: 140px;
+    }
+
+    .exp-card-info {
+        padding-left: 0;
+    }
+
+    .exp-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .exp-role-title {
+        font-size: 1.75rem;
+    }
+
+    .exp-team-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .exp-date-badge {
+        font-size: 0.95rem;
+        padding: 3px 12px;
+        white-space: normal;
+    }
+
+    .exp-bullet-point {
+        font-size: 1rem;
+        line-height: 1.55;
+    }
+
+    /* Projects Polaroid Grid on Mobile */
+    .polaroid-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .polaroid-card {
+        height: auto;
+        transform: none !important;
+        box-shadow: 6px 6px 0px var(--color-teal);
+    }
+
+    /* Music Section Card on Mobile */
+    .music-card {
+        padding: 100px 20px 24px 20px;
+        margin-top: 60px;
+        max-width: 100%;
+    }
+
+    .guitar-img-wrapper {
+        right: 50%;
+        top: 0;
+        transform: translate(50%, -25%) rotate(6deg);
+        width: 280px;
+    }
+
+    .audio-title {
+        font-size: 1.7rem;
+    }
+
+    .waveform-container {
+        height: 52px;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        top: 10px;
+        padding: 0 8px;
+    }
+
+    .navbar {
+        padding: 4px 8px;
+        gap: 4px;
+        border-radius: 12px;
+    }
+
+    .nav-btn {
+        font-size: 1rem;
+        padding: 4px 8px;
+        border-radius: 8px;
+    }
+
+    .panel-title {
+        font-size: 2.4rem;
+        letter-spacing: 1px;
+    }
+
+    .id-card-img {
+        max-width: 280px;
+    }
+
+    .altair-badge-wrapper {
+        width: 80px;
+        height: 80px;
+        right: 0px;
+        top: -20px;
+    }
+
+    .social-links-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .social-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 1rem;
+        padding: 8px 14px;
+    }
+}

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sohan</title>
+    <!-- Tab Favicon Icon -->
+    <link rel="icon" type="image/png" href="assets/pohan.png">
+    <!-- Google Fonts: Londrina Solid & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Fine Green Grid Overlay -->
+    <div class="bg-grid-overlay"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar-container">
+        <nav class="navbar">
+
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-btn active" data-section="home">Home</a></li>
+                <li><a href="#experience" class="nav-btn" data-section="experience">Experience</a></li>
+                <li><a href="#projects" class="nav-btn" data-section="projects">Projects</a></li>
+                <li><a href="#music" class="nav-btn" data-section="music">Music</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Container (Scrollable Layout) -->
+    <main class="main-stage">
+
+        <!-- HOME PANEL: Center Stage ID Card -->
+        <section id="home" class="panel">
+            <div class="hero-center-container">
+
+                <!-- Interactive 3D Perspective Card Wrapper -->
+                <div class="id-card-wrapper" id="idCardWrapper">
+                    <div class="id-card" id="idCard">
+                        <!-- Card Image -->
+                        <img src="assets/id.png" alt="ID Card / Passport" class="id-card-img" id="idCardImg">
+                        <!-- Interactive Dynamic Glare/Shine Effect -->
+                        <div class="card-glare" id="cardGlare"></div>
+                    </div>
+                </div>
+
+                <!-- Social & Contact Links -->
+                <div class="social-links-group">
+                    <a href="https://github.com/mahfuzkamalsohan/" target="_blank" rel="noopener noreferrer"
+                        class="social-btn">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/mahfuz-kamal-sohan-958698309/" target="_blank"
+                        rel="noopener noreferrer" class="social-btn">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        LinkedIn
+                    </a>
+                    <a href="mailto:mahfuzkamal004@gmail.com" class="social-btn">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        mahfuzkamal004@gmail.com
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- EXPERIENCE PANEL -->
+        <section id="experience" class="panel">
+            <div class="panel-content">
+                <h2 class="panel-title">Experience</h2>
+
+                <!-- Mars Rover Project Altair Card -->
+                <div class="experience-card">
+
+                    <!-- Altair Badge Image (Top Right Corner) -->
+                    <div class="altair-badge-wrapper">
+                        <img src="assets/altair.png" alt="Project Altair Logo" class="altair-badge-img">
+                    </div>
+
+                    <!-- Rover Image (Rotated) -->
+                    <div class="rover-img-wrapper">
+                        <img src="assets/rover.png" alt="Project Altair Mars Rover" class="rover-img">
+                    </div>
+
+                    <!-- Astronaut Image (Unrotated, below rover) -->
+                    <div class="astronaut-img-wrapper">
+                        <img src="assets/astronaut.png" alt="Astronaut" class="astronaut-img">
+                    </div>
+
+                    <!-- Experience Information (Right of Rover Image) -->
+                    <div class="exp-card-info">
+                        <div class="exp-card-header">
+                            <div>
+                                <h3 class="exp-role-title">Software Sub-team Member</h3>
+                                <h4 class="exp-team-subtitle">Project Altair (Official Mars Rover Team of IUT)</h4>
+                            </div>
+                            <span class="exp-date-badge">December 2025 - Present</span>
+                        </div>
+
+                        <div class="exp-card-body">
+                            <p class="exp-bullet-point">
+                                Responsible for maintaining and developing the rover’s core software stack using ROS2
+                                and Python, optimizing real-time hardware communication and sensor fusion for autonomous
+                                navigation, and object detection using Machine Learning algorithms.
+                            </p>
+                        </div>
+
+                        <div class="badge-group exp-tech-tags">
+                            <span class="badge badge-mint">ROS2</span>
+                            <span class="badge badge-lime">Python</span>
+                            <span class="badge badge-olive">Linux</span>
+                            <span class="badge badge-orange">Sensor Fusion</span>
+                            <span class="badge badge-olive">Autonomous Navigation</span>
+                            <span class="badge badge-orange">Computer Vision</span>
+                            <span class="badge badge-lime">Machine Learning</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Data Elysium Software Inc. Research Card -->
+                <div class="experience-card">
+
+                    <!-- Research Image (Positioned like astronaut.png, unrotated) -->
+                    <div class="research-img-wrapper">
+                        <img src="assets/research.png" alt="Research Assistant Data Elysium" class="research-img">
+                    </div>
+
+                    <!-- Experience Information -->
+                    <div class="exp-card-info">
+                        <div class="exp-card-header">
+                            <div>
+                                <h3 class="exp-role-title">Research Assistant (Intern)</h3>
+                                <a href="https://www.data-elysium.ca/" target="_blank" rel="noopener noreferrer"
+                                    class="exp-team-subtitle">Data Elysium Software Inc.</a>
+                            </div>
+                            <span class="exp-date-badge">April 2025 - May 2025</span>
+                        </div>
+
+                        <div class="exp-card-body">
+                            <p class="exp-bullet-point">
+                                Responsible for assisting in Bangla Language Processing and Artificial Intelligence (AI)
+                                research for The Babel Mash project, focusing on model evaluation, linguistic analysis,
+                                and LLM Based Python Programming.
+                            </p>
+                        </div>
+
+                        <div class="badge-group exp-tech-tags">
+                            <span class="badge badge-mint">Bangla NLP</span>
+                            <span class="badge badge-lime">AI Research</span>
+                            <span class="badge badge-olive">LLM & Python</span>
+                            <span class="badge badge-sage">Model Evaluation</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Combined Club Creative Experience Card (IUTCS & IUTFIS) -->
+                <div class="experience-card">
+
+                    <!-- Art Image (Positioned on left side like research.png, unrotated) -->
+                    <div class="art-img-wrapper">
+                        <img src="assets/art.png" alt="Creative Department Art" class="art-img">
+                    </div>
+
+                    <!-- Experience Information -->
+                    <div class="exp-card-info">
+
+                        <!-- Club Headers -->
+                        <div class="exp-sub-block">
+                            <div class="exp-card-header">
+                                <div>
+                                    <h3 class="exp-role-title">Executive Committee</h3>
+                                    <h4 class="exp-team-subtitle">IUT Computer Society (IUTCS)</h4>
+                                    <h4 class="exp-team-subtitle">IUT Al-Fazari Interstellar Society (IUTFIS)</h4>
+                                </div>
+                                <span class="exp-date-badge">January 2025 - Present</span>
+
+
+                            </div>
+
+                        </div>
+
+                        <!-- Single Unified Description -->
+                        <div class="exp-card-body">
+                            <p class="exp-bullet-point">
+                                Currently working in the Creative departments; responsible for editing
+                                videos, designing posters, and writing captions for social media posts.
+                            </p>
+                        </div>
+
+                        <!-- Combined Tech/Design Badges -->
+                        <div class="badge-group exp-tech-tags">
+                            <span class="badge badge-lime">Video Editing</span>
+                            <span class="badge badge-mint">Poster Design</span>
+                            <span class="badge badge-orange">Creative Department</span>
+                            <span class="badge badge-olive">Publication & Captions</span>
+                            <span class="badge badge-sage">Social Media</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS PANEL -->
+        <section id="projects" class="panel">
+            <div class="panel-content">
+                <h2 class="panel-title">Projects</h2>
+
+                <!-- Polaroid Style Cards Grid -->
+                <div class="polaroid-grid">
+
+                    <!-- Polaroid 1: Project Rocky -->
+                    <div class="polaroid-card polaroid-tilt-left">
+                        <a href="https://pohann.itch.io/project-rocky" target="_blank" rel="noopener noreferrer">
+                            <div class="polaroid-img-frame">
+                                <img src="assets/project_rocky.png" alt="Project Rocky 3D Rocket Navigation"
+                                    class="polaroid-img">
+                            </div>
+                        </a>
+                        <div class="polaroid-caption">
+                            <h3 class="polaroid-title">Project Rocky</h3>
+                            <p class="polaroid-desc">
+                                A 3D game where you have to launch and navigate a Rocket through an asteroid belt before
+                                fuel runs out.
+                            </p>
+                            <div class="badge-group polaroid-tags">
+                                <span class="badge badge-mint">3D Game</span>
+                                <span class="badge badge-orange">Godot</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid 2: Reign -->
+                    <div class="polaroid-card polaroid-tilt-right">
+                        <a href="https://github.com/mahfuzkamalsohan/reign-of-cthulhu" target="_blank"
+                            rel="noopener noreferrer" class="polaroid-img-link">
+                            <div class="polaroid-img-frame">
+                                <img src="assets/reign.png" alt="Reign 2D Platformer" class="polaroid-img">
+                            </div>
+                        </a>
+                        <div class="polaroid-caption">
+                            <h3 class="polaroid-title">
+                                <a href="https://github.com/mahfuzkamalsohan/reign-of-cthulhu" target="_blank"
+                                    rel="noopener noreferrer">Reign of Cthulhu</a>
+                            </h3>
+                            <p class="polaroid-desc">
+                                A 2D platformer game in C using Raylib; specifically, responsible for the creation and
+                                integration of art assets and animation-related code.
+                            </p>
+                            <div class="badge-group polaroid-tags">
+                                <span class="badge badge-lime">C & Raylib</span>
+                                <span class="badge badge-olive">Pixel Art & Animation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid 3: Particle System -->
+                    <div class="polaroid-card polaroid-tilt-left">
+                        <a href="https://github.com/mahfuzkamalsohan/particle-system" target="_blank"
+                            rel="noopener noreferrer" class="polaroid-img-link">
+                            <div class="polaroid-img-frame">
+                                <img src="assets/particle.gif" alt="Euler Particle System Simulation"
+                                    class="polaroid-img">
+                            </div>
+                        </a>
+                        <div class="polaroid-caption">
+                            <h3 class="polaroid-title">
+                                <a href="https://github.com/mahfuzkamalsohan/particle-system" target="_blank"
+                                    rel="noopener noreferrer">Particle System</a>
+                            </h3>
+                            <p class="polaroid-desc">
+                                Based on Euler's Integration Method for updating
+                                particle dynamics and SFML (Simple and Fast Multimedia Library) for visualization.
+                            </p>
+                            <div class="badge-group polaroid-tags">
+                                <span class="badge badge-mint">C++ & SFML</span>
+                                <span class="badge badge-sage">Euler Dynamics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid 4: StudyChron -->
+                    <div class="polaroid-card polaroid-tilt-right">
+                        <a href="https://github.com/raycantdo/Heisenbugs" target="_blank" rel="noopener noreferrer"
+                            class="polaroid-img-link">
+                            <div class="polaroid-img-frame">
+                                <img src="assets/studychron.png" alt="StudyChron C++ CLI Tool" class="polaroid-img">
+                            </div>
+                        </a>
+                        <div class="polaroid-caption">
+                            <h3 class="polaroid-title">
+                                <a href="https://github.com/raycantdo/Heisenbugs" target="_blank"
+                                    rel="noopener noreferrer">StudyChron</a>
+                            </h3>
+                            <p class="polaroid-desc">
+                                A C++ CLI tool for managing courses, tracking study time. Features include highlighting
+                                under-studied courses, session insights, flashcards, streaks etc.
+                            </p>
+                            <div class="badge-group polaroid-tags">
+                                <span class="badge badge-lime">C++ & CLI</span>
+                                <span class="badge badge-orange">Object Oriented Programming</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MUSIC PANEL -->
+        <section id="music" class="panel">
+            <div class="panel-content">
+                <h2 class="panel-title">Music</h2>
+
+                <!-- Music Player Card -->
+                <div class="music-card">
+
+                    <!-- Guitar Image: 1/3rd sticks out at top right -->
+                    <div class="guitar-img-wrapper">
+                        <img src="assets/guitar.png" alt="Electric Guitar" class="guitar-img">
+                    </div>
+
+                    <!-- Hidden Audio Element -->
+                    <audio id="audioPlayer" src="assets/untitled.mp3" preload="metadata"></audio>
+
+                    <!-- Music Card Info (Left of Guitar) -->
+                    <div class="music-card-info">
+
+                        <!-- Audio Header: Play Button + Track Title -->
+                        <div class="audio-player-header">
+                            <button id="playBtn" class="audio-play-btn" aria-label="Play Track">
+                                <svg id="playIcon" class="play-svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                                <svg id="pauseIcon" class="play-svg hidden" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="6" y="4" width="4" height="16"></rect>
+                                    <rect x="14" y="4" width="4" height="16"></rect>
+                                </svg>
+                            </button>
+                            <div class="audio-track-details">
+                                <h3 class="audio-title">untitled.mp3</h3>
+                                <span class="audio-status" id="audioStatus">Click to play</span>
+                            </div>
+                        </div>
+
+                        <!-- Audio Waveform Visualization -->
+                        <div class="waveform-container" id="waveform">
+                            <div class="wave-bar" style="--h: 30%"></div>
+                            <div class="wave-bar" style="--h: 55%"></div>
+                            <div class="wave-bar" style="--h: 80%"></div>
+                            <div class="wave-bar" style="--h: 40%"></div>
+                            <div class="wave-bar" style="--h: 90%"></div>
+                            <div class="wave-bar" style="--h: 65%"></div>
+                            <div class="wave-bar" style="--h: 100%"></div>
+                            <div class="wave-bar" style="--h: 45%"></div>
+                            <div class="wave-bar" style="--h: 70%"></div>
+                            <div class="wave-bar" style="--h: 85%"></div>
+                            <div class="wave-bar" style="--h: 50%"></div>
+                            <div class="wave-bar" style="--h: 95%"></div>
+                            <div class="wave-bar" style="--h: 60%"></div>
+                            <div class="wave-bar" style="--h: 75%"></div>
+                            <div class="wave-bar" style="--h: 35%"></div>
+                            <div class="wave-bar" style="--h: 80%"></div>
+                            <div class="wave-bar" style="--h: 90%"></div>
+                            <div class="wave-bar" style="--h: 50%"></div>
+                            <div class="wave-bar" style="--h: 65%"></div>
+                            <div class="wave-bar" style="--h: 40%"></div>
+                            <div class="wave-bar" style="--h: 85%"></div>
+                            <div class="wave-bar" style="--h: 70%"></div>
+                            <div class="wave-bar" style="--h: 30%"></div>
+                            <div class="wave-bar" style="--h: 60%"></div>
+                            <div class="wave-bar" style="--h: 90%"></div>
+                            <div class="wave-bar" style="--h: 45%"></div>
+                            <div class="wave-bar" style="--h: 75%"></div>
+                            <div class="wave-bar" style="--h: 55%"></div>
+                        </div>
+
+                        <!-- Description Text -->
+                        <div class="music-desc-body">
+                            <p class="music-desc-text">
+                                I also like to play the guitar, and sometimes mess around in FL Studio.
+                            </p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
