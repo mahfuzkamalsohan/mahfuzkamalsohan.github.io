@@ -456,8 +456,6 @@ body {
     /* Shifts top 1/3rd above the card border */
     width: 400px;
     z-index: 15;
-
-    pointer-events: none;
 }
 
 .rover-img {
@@ -465,6 +463,12 @@ body {
     height: auto;
     display: block;
     filter: drop-shadow(4px 6px 0px rgba(0, 77, 64, 0.25));
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.rover-img:hover {
+    transform: scale(1.05) rotate(4deg);
 }
 
 /* Astronaut Image: Positioned below rover without rotation */
@@ -739,7 +743,6 @@ body {
     transform: translateY(-25%) translateX(50%) rotate(6deg);
     width: 710px;
     z-index: 15;
-    pointer-events: none;
 }
 
 .guitar-img {
@@ -747,6 +750,12 @@ body {
     height: auto;
     display: block;
     filter: drop-shadow(4px 6px 0px rgba(0, 77, 64, 0.25));
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.guitar-img:hover {
+    transform: scale(1.05) rotate(4deg);
 }
 
 .music-card-info {
@@ -909,6 +918,10 @@ body {
         top: 0;
         transform: translate(-50%, -33.33%) rotate(-10deg);
         width: 220px;
+    }
+
+    .rover-img:hover {
+        transform: scale(1.05) rotate(8deg);
     }
 
     .altair-badge-wrapper {
